@@ -12,3 +12,4 @@ The goal is to brush up on the following concepts and technologies:
 - OpenMeteo API
 - Plotly.js
 - Nginx
+- Docker

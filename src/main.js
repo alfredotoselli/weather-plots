@@ -7,9 +7,13 @@ document.querySelector("#app").innerHTML = `
   </div>
 `;
 
-const data = await fetchWeather();
-initPlot(
-  document.getElementById("tester"),
-  data.hourly.time,
-  data.hourly.temperature2m
-);
+async function init() {
+  const data = await fetchWeather();
+  initPlot(
+    document.getElementById("tester"),
+    data.hourly.time,
+    data.hourly.temperature2m
+  );
+}
+
+init();

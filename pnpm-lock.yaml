@@ -11,7 +11,7 @@ importers:
       openmeteo:
         specifier: ^1.1.4
         version: 1.1.4
-      plotly.js-dist:
+      plotly.js-dist-min:
         specifier: ^2.35.2
         version: 2.35.2
     devDependencies:
@@ -322,8 +322,8 @@ packages:
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
-  plotly.js-dist@2.35.2:
-    resolution: {integrity: sha512-zbKfz7jXGcLGoyPJxjGrKLttPiqvsEjIMHON/dEU/mnOJ+/yYoEctEEQ3qp5zQmvoovw1L47kCsQpq/GTbejBA==}
+  plotly.js-dist-min@2.35.2:
+    resolution: {integrity: sha512-oWDTf2kYOmTtEw3epeeSBdfH/H3OSktF0suST9oI6fIgKfbyd4MT7TPh8+CVzdHYllYon24Q0HI1hZjOnLqk6g==}
 
   postcss@8.4.49:
     resolution: {integrity: sha512-OCVPnIObs4N29kxTjzLfUryOkvZEq+pf8jTF0lg8E7uETuWHA+v7j3c/xJmiqpX450191LlmZfUKkXxkTry7nA==}
@@ -610,7 +610,7 @@ snapshots:
 
   picocolors@1.1.1: {}
 
-  plotly.js-dist@2.35.2: {}
+  plotly.js-dist-min@2.35.2: {}
 
   postcss@8.4.49:
     dependencies:
