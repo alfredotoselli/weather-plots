@@ -4,9 +4,10 @@ export async function fetchWeather() {
   const params = {
     latitude: 41.8919,
     longitude: 12.5113,
-    start_date: "2024-10-30",
-    end_date: "2024-11-30",
-    hourly: "temperature_2m",
+    start_date: "2014-11-30",
+    end_date: "2024-12-05",
+    daily: "temperature_2m_mean",
+    timezone: "Europe/Rome",
   };
   const url = "https://archive-api.open-meteo.com/v1/archive";
   const responses = await fetchWeatherApi(url, params);
@@ -25,27 +26,21 @@ export async function fetchWeather() {
   const latitude = response.latitude();
   const longitude = response.longitude();
 
-  const hourly = response.hourly();
+  const daily = response.daily();
 
   // Note: The order of weather variables in the URL query and the indices below need to match!
   const weatherData = {
-    hourly: {
+    daily: {
       time: range(
-        Number(hourly.time()),
-        Number(hourly.timeEnd()),
-        hourly.interval()
+        Number(daily.time()),
+        Number(daily.timeEnd()),
+        daily.interval()
       ).map((t) => new Date((t + utcOffsetSeconds) * 1000)),
-      temperature2m: hourly.variables(0).valuesArray(),
+      temperature2mMean: Array.from(
+        new Float32Array(daily.variables(0).valuesArray())
+      ),
     },
   };
-
-  // `weatherData` now contains a simple structure with arrays for datetime and weather data
-  for (let i = 0; i < weatherData.hourly.time.length; i++) {
-    console.log(
-      weatherData.hourly.time[i].toISOString(),
-      weatherData.hourly.temperature2m[i]
-    );
-  }
 
   return weatherData;
 }

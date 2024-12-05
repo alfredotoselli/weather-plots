@@ -2,35 +2,38 @@ export const plotlyCss = `
 :host {
     display: block;
     font-family: Arial, sans-serif;
-    width: 100%; /* Allow the component to take full width of its container */
+    width: 100%;
 }
 
-.plot-container {
+.line-plot-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
-    background: white;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
 }
 
-.plot-title {
+.line-plot-title {
     font-size: 1.2rem;
     font-weight: bold;
     margin: 0;
-    color: #333;
+    color: #e2e8f0;
 }
 
-.plot-description {
+.line-plot-description {
     margin: 0;
-    color: #666;
+    color: #e2e8f0;
     line-height: 1.4;
 }
 
-#plot {
+#line-plot {
     width: 100%;
-    height: 250px;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 ::slotted(*) {

@@ -1,4 +1,12 @@
 /* Grid Layout Version */
+:root {
+  --padding: 1rem;
+}
+
+body {
+  background: linear-gradient(to right, #0f172a, #334155);
+}
+
 .plots-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 600px), 1fr));
@@ -6,13 +14,16 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: var(--padding);
+  box-sizing: border-box;
 }
 
 /* Media query for tablet and mobile */
 @media (max-width: 768px) {
   .plots-grid {
     grid-template-columns: 1fr;
+    padding: var(--padding);
+    margin: 0;
   }
 }
 
@@ -21,4 +32,14 @@ line-plot {
   display: block;
   min-width: 0; /* Prevents overflow in grid/flex layouts */
   max-width: 100%;
+}
+
+.loader {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: #333;
 }
