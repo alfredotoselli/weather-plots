@@ -1,19 +1,23 @@
 import "./style.css";
 import { fetchWeather } from "./openmeteo.js";
-import { initPlot } from "./plot.js";
+import "./components/line-plot.js";
 document.querySelector("#app").innerHTML = `
-  <div>
-    <div id="tester" style="width:600px;height:250px;"></div>
+  <div class="plots-grid" >
+    <line-plot style="width: 100%;">
+      <h2 slot="plot-title">Temperature Over Time</h2>
+      <p slot="plot-description">This graph shows temperature variations during the last week.</p>
+    </line-plot>
+    <line-plot style="width: 100%;">
+      <h2 slot="plot-title">Temperature Over Time</h2>
+      <p slot="plot-description">This graph shows temperature variations during the last week.</p>
+    </line-plot>
   </div>
 `;
 
+/*
 async function init() {
   const data = await fetchWeather();
-  initPlot(
-    document.getElementById("tester"),
-    data.hourly.time,
-    data.hourly.temperature2m
-  );
 }
+*/
 
-init();
+// init();
