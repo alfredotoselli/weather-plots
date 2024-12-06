@@ -1,7 +1,6 @@
 export const plotlyCss = `
 :host {
     display: block;
-    font-family: Arial, sans-serif;
     width: 100%;
 }
 
@@ -20,7 +19,6 @@ export const plotlyCss = `
     font-size: 1.2rem;
     font-weight: bold;
     margin: 0;
-    color: #e2e8f0;
 }
 
 .line-plot-description {
@@ -39,6 +37,7 @@ export const plotlyCss = `
 ::slotted(*) {
     margin: 0;
     font: inherit;
+    color: inherit;
 }
 
 /*  Plotly CSS scss compiled from source 
