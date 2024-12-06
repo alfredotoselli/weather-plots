@@ -1,5 +1,5 @@
 import { fetchWeatherApi } from "openmeteo";
-
+import { range } from "../utils";
 export async function fetchDailyTemperatures(cities) {
   const params = {
     latitude: cities.map((city) => city.lat),
@@ -11,10 +11,6 @@ export async function fetchDailyTemperatures(cities) {
   };
   const url = "https://archive-api.open-meteo.com/v1/archive";
   const responses = await fetchWeatherApi(url, params);
-
-  // Helper function to form time ranges
-  const range = (start, stop, step) =>
-    Array.from({ length: (stop - start) / step }, (_, i) => start + i * step);
 
   const weatherData = responses.map((response, i) => {
     const utcOffsetSeconds = response.utcOffsetSeconds();

@@ -13,3 +13,4 @@ The goal is to brush up on the following concepts and technologies:
 - Plotly.js
 - Nginx
 - Docker
+- Vitest
