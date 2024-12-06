@@ -3,7 +3,7 @@ import Plotly from "plotly.js-dist-min";
 import { plotlyCss } from "./line-plot-css.js";
 
 class LinePlot extends HTMLElement {
-  static observedAttributes = ["x-data", "y-data"];
+  static observedAttributes = ["x-data", "y-data", "city-name"];
 
   constructor() {
     super();
@@ -36,7 +36,11 @@ class LinePlot extends HTMLElement {
       ],
       {
         paper_bgcolor: plot_colors,
-        plot_bgcolor: plot_colors, // Background color of the plotting area
+        plot_bgcolor: plot_colors,
+        yaxis: {
+          title: "Temperature (°C)",
+          showgrid: true,
+        },
       },
       {
         responsive: true,

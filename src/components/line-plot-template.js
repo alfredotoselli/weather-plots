@@ -1,7 +1,7 @@
 export const customElementTemplate = `
-<div class="line-plot-container">
+<section class="line-plot-container">
     <h2 class="line-plot-title"><slot name="plot-title">Line Plot</slot></h2>
-    <div id="line-plot"></div>
+    <div id="line-plot" role="img" aria-label="Line plot visualization"></div>
     <p class="line-plot-description"><slot name="plot-description">No description provided</slot></p>
-</div>
+</section>
 `;

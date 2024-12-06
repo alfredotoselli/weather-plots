@@ -1,10 +1,19 @@
-/* Grid Layout Version */
 :root {
   --padding: 1rem;
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --font-family: Arial, sans-serif;
 }
 
 body {
   background: linear-gradient(to right, #0f172a, #334155);
+  font-family: var(--font-family);
+}
+
+header {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .plots-grid {
@@ -18,7 +27,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Media query for tablet and mobile */
 @media (max-width: 768px) {
   .plots-grid {
     grid-template-columns: 1fr;
@@ -27,19 +35,39 @@ body {
   }
 }
 
-/* Optional: Add some spacing and max-width to the plots */
 line-plot {
   display: block;
-  min-width: 0; /* Prevents overflow in grid/flex layouts */
+  min-width: 0;
   max-width: 100%;
 }
 
+footer {
+  color: var(--text-secondary);
+  text-align: center;
+  padding: var(--padding);
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
 .loader {
-  display: none; /* Hidden by default */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.5rem;
-  color: #333;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
